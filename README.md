@@ -8,3 +8,7 @@
 
 3. README instructions path    
     - https://github.com/ajinkyakolhe112/training-data-analyst/blob/gcp_training_custom/GCP_TRAINING_CUSTOM/README.md
+
+
+### Misc
+1. Use edit command instead of nano command
