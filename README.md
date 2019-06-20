@@ -11,4 +11,4 @@
 
 
 ### Misc
-1. Use edit command instead of nano command
+1. Use `cloudshell edit` command instead of `nano` command
