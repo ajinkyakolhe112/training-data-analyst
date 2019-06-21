@@ -1,7 +1,7 @@
 # Dataproc
 1. Dataproc runs spark, hive, pig, hadoop natively
 1. Dataproc cluster is made of compute instances
-1. Hadoop or Spark cluster is a fixed cluster.. It doesn’t auto-scale.
+1. Hadoop or Spark cluster is a fixed cluster.. It doesn’t auto-scale natively. New feature has been added, which can do auto scale based on a configuration file. 
 
 ## Simple DataProc Job
 1. cloud.google.com/dataproc/docs/guides/submit-job
