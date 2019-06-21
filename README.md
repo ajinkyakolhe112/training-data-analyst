@@ -16,7 +16,7 @@
     1. After opening Jupyterlab, Select Terminimal 
     1. Execute following command 
         - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
-    1. **copy the above command & paste it in terminal of notebook by pressing shift + insert**
+    1. **copy the above command & paste it in terminal of notebook by pressing shift + insert. Ctrl + v doesn't work. **
     1. Check on left hand sidebar. There should be a folder icon, click on it. It will show you the folder which contains the codes. 
     1. Open the corresponding notebook from the side bar, and execute the code by pressing `shift + enter` 
 
