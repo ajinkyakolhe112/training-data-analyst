@@ -10,7 +10,7 @@
 
 ### Opening Juypter Notebook
 1. Go to Menu -> AI Platform -> Notebooks
-2. Click on New Instance & Select Tensorflow 1.x
+2. Click on New Instance & Select Tensorflow 1.x, without GPU
 3. After Notebook Instance is created, click on Open Jupyterlab
 4. After opening Jupyterlab, Select Terminimal 
 5. Execute following command 
