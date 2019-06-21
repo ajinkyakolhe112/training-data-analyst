@@ -6,8 +6,13 @@
     - Execute following command 
     - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
 
-3. README instructions path    
-    - https://github.com/ajinkyakolhe112/training-data-analyst/blob/gcp_training_custom/GCP_TRAINING_CUSTOM/README.md
+### Opening Juypter Notebook
+1. Go to Menu -> AI Platform -> Notebooks
+2. Click on New Instance & Select Tensorflow 1.x
+3. After Notebook is created, click on Open Jupyterlab
+4. After opening Jupyterlab, Select Terminimal 
+5. Execute following command 
+    - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
 
 
 ### Misc
