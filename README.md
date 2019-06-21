@@ -1,8 +1,10 @@
 ## IMPORTANT LINKS
-1. Qwiklabs LINK
+1. **CODE**. Custom Github Branch Link
+    - tiny.cc/gcp-ajinkya
+2. **LABS**. Qwiklabs LINK
     - https://www.googlecloud.qwiklabs.com
 
-2. Github clone link command
+3. Github clone command
     - Execute following command 
     - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
 
