@@ -12,7 +12,8 @@
     - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
 
 ### Misc
-1. Use `cloudshell edit` command instead of `nano` command to open text editor
+1. **DO NOT USE NANO**. 
+1. Launch UI text editor by executing command Use `cloudshell edit`
 
 ### Opening Juypter Notebook for Machine Learning
 1. Go to Menu -> AI Platform -> Notebooks
