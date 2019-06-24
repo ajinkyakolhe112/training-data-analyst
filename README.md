@@ -1,12 +1,14 @@
 ## IMPORTANT LINKS
 1. **CODE**. Custom Github Branch Link
-    - tiny.cc/gcp-ajinkya
+    - www.tiny.cc/gcp-ajinkya
 2. **LABS**. Qwiklabs LINK
     - https://www.googlecloud.qwiklabs.com
-
-3. Github clone command
-    - Execute following command 
+    - **Slides of Lectures will be present in googlecloud.qwiklabs.com
+3. **Custom Code** Github clone command
+    - Execute following command for custom code
     - `git clone --single-branch --branch gcp_training_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
+    - Execute following command for official code repo
+    - `git clone https://github.com/GoogleCloudPlatform/training-data-analyst`
 
 ### Opening Juypter Notebook
 1. Go to Menu -> AI Platform -> Notebooks
