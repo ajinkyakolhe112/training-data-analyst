@@ -4,6 +4,7 @@
 2. **LABS**. Qwiklabs LINK
     - https://www.googlecloud.qwiklabs.com
     - **Slides of Lectures will be present in googlecloud.qwiklabs.com**
+    - If you don't see the training classroom, enter your email id at https://forms.gle/nwGkyr79SiZnMi587
 3. **Github clone command**
     - Execute following command for official code repo
     - `git clone https://github.com/GoogleCloudPlatform/training-data-analyst`
