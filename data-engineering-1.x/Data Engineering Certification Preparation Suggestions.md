@@ -1,29 +1,44 @@
 # Study guide for Data Engineering certification
 ### Essential Products to study
-1. Compute Engine
+
+#### 1. Hadoop Ecosystem
+1. DataProc
 1. Cloud Storage
-1. SQL
-1. Spanner
-1. BigTable
-1. DataFlow
+
+#### 2. Data Analytics
 1. BigQuery
     1. BigQuery ML
     1. BigQuery GIS
-1. PubSub
-1. Composer
-1. Fusion
+1. BigTable
+
+#### 3. Data Processing
+1. DataFlow
 1. DataPrep
-1. Data Labeling
+
+#### Machine Learning
+1. Data Labeling [**new**]
 1. AI Platform
-1. Auto ML Natural Language
-1. Auto ML Tables
-1. Auto ML Translation
-1. Auto ML Vision
-1. Auto ML Video Intelligence
+1. Auto ML Natural Language [**new**]
+1. Auto ML Tables [**new**]
+1. Auto ML Translation [**new**]
+1. Auto ML Vision [**new**]
+1. Auto ML Video Intelligence [**new**]
 1. ML Natural Language API
 1. ML Translate API
 1. ML Vision API
 1. ML Video API
+
+#### Storage Products
+1. SQL
+1. Spanner
+1. BigTable
+
+#### Streaming Data
+1. PubSub
+
+#### New Products
+1. Composer [**new**]
+1. Fusion [**new**]
 
 ### Good to know products
 1. Scheduler
@@ -31,8 +46,6 @@
 1. IAM
 1. Kubernetes & KubFlow
 1. Cloud Functions
-
-
 
 ## Suggestions for Certification Preparation Study
 1. Go through slides of Data Engineering course found in Qwiklabs and Labs at least once. Check coursera videos too if needed
