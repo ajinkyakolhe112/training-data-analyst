@@ -8,3 +8,7 @@
 - modifying qwiklabs for ai platform & nano... & installing package again. 
 - bigquery update to standard in Lab 3 of dataflow. Change the instructions in qwikalbs as well. Will need to create the view again for the purposes of standar format. 
 - change bigquery labs in legacy format from bigquery labs. 
+- Machine Learning
+    - Lab 1. Remove csv files. They are supposed to be created from that lab.. (may be copy them in previoud directory and read them in subsequent labs)
+    - Lab 2. Reset the kernel instruction is not clear. Expand on that. 
+    - Lab 3. Add further experiments on how to ml modelling in that.. 
