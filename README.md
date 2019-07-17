@@ -17,7 +17,7 @@
 
 ### Opening Juypter Notebook for Machine Learning
 1. Go to Menu -> AI Platform -> Notebooks
-2. Click on New Instance & Select Tensorflow 1.x, without GPU
+2. Click on New Instance & Select Tensorflow 1.x, without GPU. (It takes around 1 minute to create the notebook & "Opening Jupyterlab becoming clickable.)
 3. After Notebook Instance is created, click on Open Jupyterlab
 4. Getting code in AI Platform Notebook
     1. After opening Jupyterlab, Select Terminimal
