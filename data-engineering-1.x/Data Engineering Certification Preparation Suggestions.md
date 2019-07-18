@@ -39,10 +39,12 @@
 #### New Products
 1. Composer [**new**]
 1. Fusion [**new**]
+1. Data Catalogue [**new**]
 
 ### Good to know products
 1. Scheduler
-1. Taks
+1. Tasks
+1. IoT Core
 1. IAM
 1. Kubernetes & KubFlow
 1. Cloud Functions
