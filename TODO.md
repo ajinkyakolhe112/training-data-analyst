@@ -12,3 +12,4 @@
     - Lab 1. Remove csv files. They are supposed to be created from that lab.. (may be copy them in previoud directory and read them in subsequent labs)
     - Lab 2. Reset the kernel instruction is not clear. Expand on that. 
     - Lab 3. Add further experiments on how to ml modelling in that.. 
+    - Lab 6. Remove JupyterLab via datalab. Make it platform indendant
