@@ -14,3 +14,8 @@
     - Lab 3. Add further experiments on how to ml modelling in that.. 
     - Lab 6. Remove JupyterLab via datalab. Make it platform indendant
     - Lab 7. Python 2, problem in packages. For python 3, how to make it work? Check david's repository. For dataflow job, can run it externally and simply use python 3 in the ai platform notebook.. The query is not correct. it doesn't select the subset. 
+    
+# Qwilabs Updates
+1. Day 1. Lab 1. replace nano with cloudshell edit
+1. Day 1. Lab 1. replace n1-standard-2 with 2vCPUs
+
