@@ -20,10 +20,10 @@
 2. Click on New Instance & Select Tensorflow 1.x, without GPU. (It takes around 1 minute to create the notebook & "Opening Jupyterlab becoming clickable.)
 3. After Notebook Instance is created, click on Open Jupyterlab
 4. Getting code in AI Platform Notebook
-    1. After opening Jupyterlab, Select Terminimal
+    1. After opening Jupyterlab, Select Terminal at bottom of the page
     1. Execute following command
         - `git clone --single-branch --branch gcp_custom https://github.com/ajinkyakolhe112/training-data-analyst.git`
         - **copy the above command & paste it in terminal of notebook by pressing shift + insert. Ctrl + v doesn't work.**
         - Once git clone is executed, code is copied into Jupyter Notebook
-5. Check on left hand sidebar. There should be a folder icon, click on it. It will show you the folder which contains the codes.
+5. On left hand sidebar. There should be a folder training_data_analyst, click on it. It will show you the folder which contains the codes.
 6. Open the corresponding notebook from the side bar, and execute the code by pressing `shift + enter`
