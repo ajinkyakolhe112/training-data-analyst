@@ -62,3 +62,9 @@
 4. Use options to eliminate choices
     1. If you are confused between final two choices after elimination, then read the question again very very carefully
     2. Or Mark the question for review and revisit it towards the end
+    
+ ## Approach to solve case studies question
+ 1. Understand the problem of company
+ 1. Understand constrains of the companey
+ 1. Understand the solution already implemented, and how we can desing solution which compliments the old solution
+ 1. Then propose the solution
