@@ -7,15 +7,7 @@ print(tf.__version__)
 tf.logging.set_verbosity(tf.logging.INFO)
 
 # In CSV, label is the first column, after the features, followed by the key
-CSV_COLUMNS = [
-    "fare_amount",
-    "pickuplon",
-    "pickuplat",
-    "dropofflon",
-    "dropofflat",
-    "passengers",
-    "key",
-]
+CSV_COLUMNS = ['fare_amount', 'pickuplon', 'pickuplat', 'dropofflon', 'dropofflat', 'passengers', 'key']
 FEATURES = CSV_COLUMNS[1 : len(CSV_COLUMNS) - 1]
 LABEL = CSV_COLUMNS[0]
 DEFAULTS = [[0.0], [-74.0], [40.0], [-74.0], [40.7], [1.0], ["nokey"]]
@@ -27,7 +19,7 @@ def read_dataset(filename, mode, batch_size=512):
         def decode_csv(value_column):
             columns = tf.decode_csv(value_column, record_defaults=DEFAULTS)
             features = dict(zip(CSV_COLUMNS, columns))
-            label = features.pop(LABEL_COLUMN)
+            label = features.pop(LABEL)
             return features, label
 
         # Create list of files that match pattern
@@ -85,7 +77,7 @@ def serving_input_fn():
 # Create an estimator that we are going to train and evaluate
 def train_and_evaluate(output_dir, num_train_steps):
     estimator = tf.estimator.LinearRegressor(
-        model_dir=output_dir, feature_columns=feature_cols
+        model_dir=output_dir, feature_columns=make_feature_cols()
     )
 
     train_spec = tf.estimator.TrainSpec(

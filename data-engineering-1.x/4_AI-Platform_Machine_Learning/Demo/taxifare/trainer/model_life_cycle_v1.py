@@ -7,15 +7,7 @@ print(tf.__version__)
 tf.logging.set_verbosity(tf.logging.INFO)
 
 # In CSV, label is the first column, after the features, followed by the key
-CSV_COLUMNS = [
-    "fare_amount",
-    "pickuplon",
-    "pickuplat",
-    "dropofflon",
-    "dropofflat",
-    "passengers",
-    "key",
-]
+CSV_COLUMNS = ['fare_amount', 'pickuplon', 'pickuplat', 'dropofflon', 'dropofflat', 'passengers', 'key']
 FEATURES = CSV_COLUMNS[1 : len(CSV_COLUMNS) - 1]
 LABEL = CSV_COLUMNS[0]
 
@@ -40,7 +32,7 @@ def make_feature_cols():
 
 shutil.rmtree(OUTDIR, ignore_errors=True)  # start fresh each time
 
-model = tf.estimator.LinearRegressor(feature_columns=feature_cols, model_dir=OUTDIR)
+model = tf.estimator.LinearRegressor(feature_columns=make_feature_cols(), model_dir=OUTDIR)
 
 model.train(
     input_fn=make_input_fn(

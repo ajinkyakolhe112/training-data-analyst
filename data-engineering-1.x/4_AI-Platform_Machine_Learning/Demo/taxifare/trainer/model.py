@@ -1,23 +1,16 @@
-#!/usr/bin/env python
-
 import tensorflow as tf
+import pandas as pd
 import numpy as np
 import shutil
 
 tf.logging.set_verbosity(tf.logging.INFO)
 
 # In CSV, label is the first column, after the features, followed by the key
-CSV_COLUMNS = [
-    "fare_amount",
-    "pickuplon",
-    "pickuplat",
-    "dropofflon",
-    "dropofflat",
-    "passengers",
-    "key",
-]
+CSV_COLUMNS = ['fare_amount', 'pickuplon', 'pickuplat', 'dropofflon', 'dropofflat', 'passengers', 'key']
 FEATURES = CSV_COLUMNS[1 : len(CSV_COLUMNS) - 1]
 LABEL = CSV_COLUMNS[0]
+DEFAULTS = [[0.0], [-74.0], [40.0], [-74.0], [40.7], [1.0], ["nokey"]]
+
 
 
 # Create an input function that stores your data into a dataset
@@ -26,7 +19,7 @@ def read_dataset(filename, mode, batch_size=512):
         def decode_csv(value_column):
             columns = tf.decode_csv(value_column, record_defaults=DEFAULTS)
             features = dict(list(zip(CSV_COLUMNS, columns)))
-            label = features.pop(LABEL_COLUMN)
+            label = features.pop(LABEL)
             return features, label
 
         # Create list of files that match pattern
@@ -84,8 +77,9 @@ def serving_input_fn():
 # Create an estimator that we are going to train and evaluate
 def train_and_evaluate(args):
     estimator = tf.estimator.LinearRegressor(
-        model_dir=args["output_dir"], feature_columns=make_feature_cols
+        model_dir=args["output_dir"], feature_columns=make_feature_cols()
     )
+    print(type(make_feature_cols))
     train_spec = tf.estimator.TrainSpec(
         input_fn=read_dataset(
             args["train_data_paths"],
