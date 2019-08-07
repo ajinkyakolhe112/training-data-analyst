@@ -18,3 +18,8 @@
 1. Day 1. Lab 1. replace nano with cloudshell edit
 1. Day 1. Lab 1. replace n1-standard-2 with 2vCPUs
 
+# Trouble Shooting
+1. Dataproc. HDFS error. Login to master not cloudshell
+1. Dataproc something error. Check BUCKET
+1. Firewall rule important stage which most miss
+1. Dataflow. gsutil cp error. Check value in BUCKET.
