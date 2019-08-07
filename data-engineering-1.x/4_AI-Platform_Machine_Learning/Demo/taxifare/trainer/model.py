@@ -7,8 +7,16 @@ import shutil
 tf.logging.set_verbosity(tf.logging.INFO)
 
 # In CSV, label is the first column, after the features, followed by the key
-CSV_COLUMNS = ['fare_amount', 'pickuplon', 'pickuplat', 'dropofflon', 'dropofflat', 'passengers', 'key']
-FEATURES = CSV_COLUMNS[1:len(CSV_COLUMNS) - 1]
+CSV_COLUMNS = [
+    "fare_amount",
+    "pickuplon",
+    "pickuplat",
+    "dropofflon",
+    "dropofflat",
+    "passengers",
+    "key",
+]
+FEATURES = CSV_COLUMNS[1 : len(CSV_COLUMNS) - 1]
 LABEL = CSV_COLUMNS[0]
 
 
@@ -42,11 +50,11 @@ def read_dataset(filename, mode, batch_size=512):
 # Define your feature columns
 def make_feature_cols():
     INPUT_COLUMNS = [
-        tf.feature_column.numeric_column('pickuplon'),
-        tf.feature_column.numeric_column('pickuplat'),
-        tf.feature_column.numeric_column('dropofflat'),
-        tf.feature_column.numeric_column('dropofflon'),
-        tf.feature_column.numeric_column('passengers'),
+        tf.feature_column.numeric_column("pickuplon"),
+        tf.feature_column.numeric_column("pickuplat"),
+        tf.feature_column.numeric_column("dropofflat"),
+        tf.feature_column.numeric_column("dropofflon"),
+        tf.feature_column.numeric_column("passengers"),
     ]
 
     def add_more_features(feats):
@@ -61,15 +69,14 @@ def make_feature_cols():
 # Create your serving input function so that your trained model will be able to serve predictions
 def serving_input_fn():
     feature_placeholders = {
-        'pickuplon': tf.placeholder(tf.float32, [None]),
-        'pickuplat': tf.placeholder(tf.float32, [None]),
-        'dropofflat': tf.placeholder(tf.float32, [None]),
-        'dropofflon': tf.placeholder(tf.float32, [None]),
-        'passengers': tf.placeholder(tf.float32, [None]),
+        "pickuplon": tf.placeholder(tf.float32, [None]),
+        "pickuplat": tf.placeholder(tf.float32, [None]),
+        "dropofflat": tf.placeholder(tf.float32, [None]),
+        "dropofflon": tf.placeholder(tf.float32, [None]),
+        "passengers": tf.placeholder(tf.float32, [None]),
     }
     features = {
-        key: tf.expand_dims(tensor, -1)
-        for key, tensor in feature_placeholders.items()
+        key: tf.expand_dims(tensor, -1) for key, tensor in feature_placeholders.items()
     }
     return tf.estimator.export.ServingInputReceiver(features, feature_placeholders)
 
@@ -77,25 +84,22 @@ def serving_input_fn():
 # Create an estimator that we are going to train and evaluate
 def train_and_evaluate(args):
     estimator = tf.estimator.LinearRegressor(
-        model_dir=args['output_dir'],
-        feature_columns=make_feature_cols
+        model_dir=args["output_dir"], feature_columns=make_feature_cols
     )
     train_spec = tf.estimator.TrainSpec(
         input_fn=read_dataset(
-            args['train_data_paths'],
-            batch_size=args['train_batch_size'],
-            mode=tf.estimator.ModeKeys.TRAIN
+            args["train_data_paths"],
+            batch_size=args["train_batch_size"],
+            mode=tf.estimator.ModeKeys.TRAIN,
         ),
-        max_steps=args['train_steps']
+        max_steps=args["train_steps"],
     )
-    exporter = tf.estimator.LatestExporter('exporter', serving_input_fn)
+    exporter = tf.estimator.LatestExporter("exporter", serving_input_fn)
     eval_spec = tf.estimator.EvalSpec(
-        input_fn=read_dataset(
-            args['eval_data_paths'],
-            mode=tf.estimator.ModeKeys.EVAL),
+        input_fn=read_dataset(args["eval_data_paths"], mode=tf.estimator.ModeKeys.EVAL),
         steps=None,
-        start_delay_secs=args['eval_delay_secs'],  # start evaluating after N seconds
-        throttle_secs=args['min_eval_frequency'],  # evaluate every N seconds
-        exporters=exporter
+        start_delay_secs=args["eval_delay_secs"],  # start evaluating after N seconds
+        throttle_secs=args["min_eval_frequency"],  # evaluate every N seconds
+        exporters=exporter,
     )
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)

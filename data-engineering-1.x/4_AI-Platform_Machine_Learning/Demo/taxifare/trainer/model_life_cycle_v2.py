@@ -67,7 +67,7 @@ model = tf.estimator.LinearRegressor(
 )
 
 model.train(
-    input_fn=read_dataset('./taxi-train.csv', mode=tf.estimator.ModeKeys.TRAIN), num_epochs=100)
+    input_fn=read_dataset('./taxi-train.csv', mode=tf.estimator.ModeKeys.TRAIN),num_epochs=100)
 )
 
 def print_rmse(model, name, df):
