@@ -75,16 +75,19 @@ def train_and_evaluate(output_dir, num_train_steps):
     )
 
     train_spec = tf.estimator.TrainSpec(
-        input_fn=read_dataset("../../taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN),
+        input_fn=read_dataset(
+            filename="../../taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN
+        ),
         max_steps=num_train_steps,
     )
 
-    exporter = tf.estimator.LatestExporter("exporter", serving_input_fn)
+    exporter = tf.estimator.LatestExporter(
+        name="exporter", serving_input_receiver_fn=serving_input_fn
+    )
 
     eval_spec = tf.estimator.EvalSpec(
         input_fn=read_dataset(
-            filename="../../taxi-valid.csv", 
-            mode=tf.estimator.ModeKeys.EVAL
+            filename="../../taxi-valid.csv", mode=tf.estimator.ModeKeys.EVAL
         ),
         steps=None,
         start_delay_secs=1,  # start evaluating after N seconds
@@ -94,7 +97,8 @@ def train_and_evaluate(output_dir, num_train_steps):
 
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
 
-OUTDIR = 'taxi_trained'
-shutil.rmtree(OUTDIR, ignore_errors=True)  # start fresh each time
+
+OUTDIR = "taxi_trained"
+shutil.rmtree(path=OUTDIR, ignore_errors=True)  # start fresh each time
 
 train_and_evaluate(OUTDIR, num_train_steps=5000)

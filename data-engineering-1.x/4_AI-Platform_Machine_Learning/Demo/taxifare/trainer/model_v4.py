@@ -75,7 +75,7 @@ def train_and_evaluate(args):
     )
     train_spec = tf.estimator.TrainSpec(
         input_fn=read_dataset(
-            args["train_data_paths"],
+            filename=args["train_data_paths"],
             batch_size=args["train_batch_size"],
             mode=tf.estimator.ModeKeys.TRAIN,
         ),
@@ -83,7 +83,9 @@ def train_and_evaluate(args):
     )
     exporter = tf.estimator.LatestExporter("exporter", serving_input_fn)
     eval_spec = tf.estimator.EvalSpec(
-        input_fn=read_dataset(args["eval_data_paths"], mode=tf.estimator.ModeKeys.EVAL),
+        input_fn=read_dataset(
+            filename=args["eval_data_paths"], mode=tf.estimator.ModeKeys.EVAL
+        ),
         steps=None,
         start_delay_secs=args["eval_delay_secs"],  # start evaluating after N seconds
         throttle_secs=args["min_eval_frequency"],  # evaluate every N seconds
