@@ -42,38 +42,31 @@ def read_dataset(filename, mode, batch_size=512):
 
 # Define your feature columns
 def make_feature_cols():
-    INPUT_COLUMNS = [
-        tf.feature_column.numeric_column("pickuplon"),
-        tf.feature_column.numeric_column("pickuplat"),
-        tf.feature_column.numeric_column("dropofflat"),
-        tf.feature_column.numeric_column("dropofflon"),
-        tf.feature_column.numeric_column("passengers"),
-    ]
+    input_columns = [tf.feature_column.numeric_column(k) for k in FEATURES]
 
     def add_more_features(feats):
         # Nothing to add (yet!)
         return feats
 
-    all_feature_cols = add_more_features(INPUT_COLUMNS)
+    all_feature_cols = add_more_features(input_columns)
 
     return all_feature_cols
 
-
+OUTDIR = 'taxi_trained'
 shutil.rmtree(OUTDIR, ignore_errors=True)  # start fresh each time
 
 model = tf.estimator.LinearRegressor(feature_columns=make_feature_cols(), model_dir=OUTDIR)
 
 model.train(
-    input_fn=read_dataset("./taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN),
-    num_epochs=100,
+    input_fn=read_dataset(filename="../../taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN),
 )
 
 
-def print_rmse(model, name, df):
+def print_rmse(model, name):
     metrics = model.evaluate(
-        input_fn=read_dataset("./taxi-valid.csv", mode=tf.estimator.ModeKeys.EVAL)
+        input_fn=read_dataset(filename="../../taxi-valid.csv", mode=tf.estimator.ModeKeys.EVAL)
     )
     print("RMSE on {} dataset = {}".format(name, np.sqrt(metrics["average_loss"])))
 
 
-print_rmse(model, "validation", df_valid)
+print_rmse(model, "validation")

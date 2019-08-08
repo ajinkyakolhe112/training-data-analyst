@@ -29,26 +29,26 @@ def make_feature_cols():
     input_columns = [tf.feature_column.numeric_column(k) for k in FEATURES]
     return input_columns
 
-
+OUTDIR = 'taxi_trained'
 shutil.rmtree(OUTDIR, ignore_errors=True)  # start fresh each time
 
 model = tf.estimator.LinearRegressor(feature_columns=make_feature_cols(), model_dir=OUTDIR)
 
 model.train(
     input_fn=make_input_fn(
-        pd.read_csv("./taxi-train.csv", header=None, names=CSV_COLUMNS), num_epochs=100
+        pd.read_csv(filename="../../taxi-train.csv", header=None, names=CSV_COLUMNS),
+        num_epochs=1
     )
 )
 
 
-def print_rmse(model, name, df):
-    metrics = model.evaluate(
-        input_fn=make_input_fn(
-            pd.read_csv("./taxi-valid.csv", header=None, names=CSV_COLUMNS),
+def print_rmse(model, name):
+    metrics = model.evaluate(input_fn=make_input_fn(
+            pd.read_csv(filename="../../taxi-valid.csv", header=None, names=CSV_COLUMNS),
             num_epochs=1,
         )
     )
     print("RMSE on {} dataset = {}".format(name, np.sqrt(metrics["average_loss"])))
 
 
-print_rmse(model, "validation", df_valid)
+print_rmse(model, "validation")

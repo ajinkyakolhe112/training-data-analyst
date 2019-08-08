@@ -42,19 +42,13 @@ def read_dataset(filename, mode, batch_size=512):
 
 # Define your feature columns
 def make_feature_cols():
-    INPUT_COLUMNS = [
-        tf.feature_column.numeric_column("pickuplon"),
-        tf.feature_column.numeric_column("pickuplat"),
-        tf.feature_column.numeric_column("dropofflat"),
-        tf.feature_column.numeric_column("dropofflon"),
-        tf.feature_column.numeric_column("passengers"),
-    ]
+    input_columns = [tf.feature_column.numeric_column(k) for k in FEATURES]
 
     def add_more_features(feats):
         # Nothing to add (yet!)
         return feats
 
-    all_feature_cols = add_more_features(INPUT_COLUMNS)
+    all_feature_cols = add_more_features(input_columns)
 
     return all_feature_cols
 
@@ -81,14 +75,17 @@ def train_and_evaluate(output_dir, num_train_steps):
     )
 
     train_spec = tf.estimator.TrainSpec(
-        input_fn=read_dataset("./taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN),
+        input_fn=read_dataset("../../taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN),
         max_steps=num_train_steps,
     )
 
     exporter = tf.estimator.LatestExporter("exporter", serving_input_fn)
 
     eval_spec = tf.estimator.EvalSpec(
-        input_fn=read_dataset("./taxi-valid.csv", mode=tf.estimator.ModeKeys.EVAL),
+        input_fn=read_dataset(
+            filename="../../taxi-valid.csv", 
+            mode=tf.estimator.ModeKeys.EVAL
+        ),
         steps=None,
         start_delay_secs=1,  # start evaluating after N seconds
         throttle_secs=10,  # evaluate every N seconds
@@ -97,7 +94,7 @@ def train_and_evaluate(output_dir, num_train_steps):
 
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
 
-
+OUTDIR = 'taxi_trained'
 shutil.rmtree(OUTDIR, ignore_errors=True)  # start fresh each time
 
 train_and_evaluate(OUTDIR, num_train_steps=5000)

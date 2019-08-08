@@ -18,7 +18,7 @@ def read_dataset(filename, mode, batch_size=512):
     def _input_fn():
         def decode_csv(value_column):
             columns = tf.decode_csv(value_column, record_defaults=DEFAULTS)
-            features = dict(list(zip(CSV_COLUMNS, columns)))
+            features = dict(zip(CSV_COLUMNS, columns))
             label = features.pop(LABEL)
             return features, label
 
@@ -42,19 +42,13 @@ def read_dataset(filename, mode, batch_size=512):
 
 # Define your feature columns
 def make_feature_cols():
-    INPUT_COLUMNS = [
-        tf.feature_column.numeric_column("pickuplon"),
-        tf.feature_column.numeric_column("pickuplat"),
-        tf.feature_column.numeric_column("dropofflat"),
-        tf.feature_column.numeric_column("dropofflon"),
-        tf.feature_column.numeric_column("passengers"),
-    ]
+    input_columns = [tf.feature_column.numeric_column(k) for k in FEATURES]
 
     def add_more_features(feats):
         # Nothing to add (yet!)
         return feats
 
-    all_feature_cols = add_more_features(INPUT_COLUMNS)
+    all_feature_cols = add_more_features(input_columns)
 
     return all_feature_cols
 
