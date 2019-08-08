@@ -69,36 +69,26 @@ def serving_input_fn():
 
 
 # Create an estimator that we are going to train and evaluate
-def train_and_evaluate(output_dir, num_train_steps):
+def train_and_evaluate(args):
     estimator = tf.estimator.LinearRegressor(
-        model_dir=output_dir, feature_columns=make_feature_cols()
+        model_dir=args["output_dir"], feature_columns=make_feature_cols()
     )
-
     train_spec = tf.estimator.TrainSpec(
         input_fn=read_dataset(
-            filename="../../taxi-train.csv", mode=tf.estimator.ModeKeys.TRAIN
+            filename=args["train_data_paths"],
+            batch_size=args["train_batch_size"],
+            mode=tf.estimator.ModeKeys.TRAIN,
         ),
-        max_steps=num_train_steps,
+        max_steps=args["train_steps"],
     )
-
-    exporter = tf.estimator.LatestExporter(
-        name="exporter", serving_input_receiver_fn=serving_input_fn
-    )
-
+    exporter = tf.estimator.LatestExporter("exporter", serving_input_fn)
     eval_spec = tf.estimator.EvalSpec(
         input_fn=read_dataset(
-            filename="../../taxi-valid.csv", mode=tf.estimator.ModeKeys.EVAL
+            filename=args["eval_data_paths"], mode=tf.estimator.ModeKeys.EVAL
         ),
         steps=None,
-        start_delay_secs=1,  # start evaluating after N seconds
-        throttle_secs=10,  # evaluate every N seconds
+        start_delay_secs=args["eval_delay_secs"],  # start evaluating after N seconds
+        throttle_secs=args["min_eval_frequency"],  # evaluate every N seconds
         exporters=exporter,
     )
-
     tf.estimator.train_and_evaluate(estimator, train_spec, eval_spec)
-
-
-OUTDIR = "taxi_trained"
-shutil.rmtree(path=OUTDIR, ignore_errors=True)  # start fresh each time
-
-train_and_evaluate(OUTDIR, num_train_steps=5000)
