@@ -1,0 +1,1 @@
+1. If you get the error, "Access Denied: Project cloudshell-images: The user <something>_student@qwiklabs.net does not have bigquery.jobs.create permission in project cloudshell-images.", change the project by clicking on the arrow on right side of "Google Cloud Shell". Use **switch to project** to change the project to "qwiklabs-gcp-<something>"
