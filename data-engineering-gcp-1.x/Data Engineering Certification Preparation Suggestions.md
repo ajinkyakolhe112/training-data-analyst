@@ -59,7 +59,8 @@
 1. Read the **complete** question very carefully
 2. Read all the answers very carefully
 3. Don't assume more than what is given in the question
-4. Use options to eliminate choices
+4. Don't jump to conclusion. Unless you read the whole question and answers, don't finalize your own answer. 
+5. Use options to eliminate choices
     1. If you are confused between final two choices after elimination, then read the question again very very carefully
     2. Or Mark the question for review and revisit it towards the end
     
