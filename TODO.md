@@ -23,6 +23,7 @@
 6. Day 1. lab 1. Give details on what is zone vs region. 
 7. Day 1. Lab 1. replace n1-standard-2 with 2vCPUs
 8. Day 1. Lab 2. Task 1. Instruction 3. source myenv before doing gsutil cp $BUCKET
+9. Day 1. Lab 1. After gsutil cp $BUCKET, do gsutil ls.. Before gsutil $BUCKET, do echo $BUCKET and source execute. 
 
 # Trouble Shooting
 1. Dataproc. HDFS error. Login to master not cloudshell
