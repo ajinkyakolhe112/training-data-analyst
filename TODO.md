@@ -16,7 +16,13 @@
     
 # Qwilabs Updates
 1. Day 1. Lab 1. replace nano with cloudshell edit
-1. Day 1. Lab 1. replace n1-standard-2 with 2vCPUs
+2. Day 1. Lab 1. Version 1.2 for component gateaway doesn't work. Version should be more than 1.3.29
+3. Day 1. Lab 1. Remove the  image option 1.2 verion for creation of cluster. 
+4. Day 1. lab 1. Highlight executing the source instruction
+5. Day 1. Lab 1. Highlight, zone should be present inside the region. 
+6. Day 1. lab 1. Give details on what is zone vs region. 
+7. Day 1. Lab 1. replace n1-standard-2 with 2vCPUs
+8. Day 1. Lab 2. Task 1. Instruction 3. source myenv before doing gsutil cp $BUCKET
 
 # Trouble Shooting
 1. Dataproc. HDFS error. Login to master not cloudshell
