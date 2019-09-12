@@ -1,7 +1,7 @@
 # README for MACHINE LEARNING
 
 ## Starting Jupyter Lab
-1. Open AI Platform Notebooks
+1. Open Navigation Menu -> Airtificial Intelligence -> AI Platform Notebooks
 2. Click on Create Instance and Choose Tensorflow 1.x
 3. After initialization is done, click on open Jupyter Lab
 
