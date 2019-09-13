@@ -9,7 +9,8 @@
 ## Cloning Custom Repository
 1. After Clicking on Jupyter Lab , select terminal from the launcher
 2. Execute command `git clone --single-branch --branch gcp_custom https://github.com/ajinkyakolhe112/training-data-analyst.git` by copying it and paste it by pressing shift + insert or ctrl + v.
-3. Labs are present in, training-data-analyst/data-engineering-1.x/4_AI-Platform_Machine_Learning
+3. Labs are present in, training-data-analyst/data-engineering-1.x/4_AI-Platform_Machine_Learning . You will find them on the left hand side browser bar in Jupyter Lab
+4. Open the notebook and execute code block/cell by pressing Shift + Enter
 
 ## IMP in Jupyter Lab
 - For copy in Jupyter Lab use Ctrl + Insert or ctrl + c
