@@ -3,7 +3,8 @@
 ## Starting Jupyter Lab
 1. Open Navigation Menu -> Airtificial Intelligence -> AI Platform Notebooks
 2. Click on Create Instance and Choose Tensorflow 1.x without GPUS
-3. After initialization is done, click on open Jupyter Lab
+3. After creating the instance, wait until "Open Jupyter Lab" in blue color becomes visible. 
+4. After initialization is done, click on open Jupyter Lab
 
 ## Cloning Custom Repository
 1. After Clicking on Jupyter Lab , select terminal from the launcher
