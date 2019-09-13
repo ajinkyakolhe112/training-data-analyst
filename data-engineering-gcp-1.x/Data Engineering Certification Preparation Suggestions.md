@@ -1,4 +1,11 @@
 # Study guide for Data Engineering certification
+
+Steps for preparation
+1. Lectures
+2. Labbs
+3. SLides
+4. Docuemtnation
+
 ### Essential Products to study
 
 #### 1. Hadoop Ecosystem
