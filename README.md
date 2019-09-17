@@ -28,4 +28,5 @@
         - **copy the above command & paste it in terminal of notebook by pressing shift + insert or Ctrl + v**
         - Once git clone is executed, code is copied into Jupyter Notebook
 5. On left hand sidebar. There should be a folder training_data_analyst, click on it. It will show you the folder which contains the codes.
-6. Open the corresponding notebook from the side bar, and execute the code by pressing `shift + enter`
+6. AI Codes are present in , training-data-analyst/data-engineering-gcp-1.x/4-AI-Platform_MachineLearning/
+7. Open the corresponding notebook from the side bar, and execute the code by pressing `shift + enter`
