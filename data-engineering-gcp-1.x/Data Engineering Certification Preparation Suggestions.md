@@ -1,10 +1,15 @@
 # Study guide for Data Engineering certification
 
-Steps for preparation
+# Steps for preparation
+## Part 1: Essential
 1. Lectures
-2. Labbs
-3. SLides
-4. Docuemtnation
+2. Labs
+3. Slides
+4. Docuemtnation: Concepts
+
+## Part 2: Extra Just in Case
+1. Documentation. How To Guides & Tutorials
+
 
 ### Essential Products to study
 
@@ -14,8 +19,10 @@ Steps for preparation
 
 #### 2. Data Analytics
 1. BigQuery
-    1. BigQuery ML
     1. BigQuery GIS
+
+
+1. BigQuery ML
 1. BigTable
 
 #### 3. Data Processing
@@ -23,17 +30,19 @@ Steps for preparation
 1. DataPrep
 
 #### Machine Learning
+1. AI Platform -> Notebook
+1. Auto ML
+    1. Auto ML Natural Language [**new**]
+    1. Auto ML Tables [**new**]
+    1. Auto ML Translation [**new**]
+    1. Auto ML Vision [**new**]
+    1. Auto ML Video Intelligence [**new**]
+1. API
+    1. ML Natural Language API
+    1. ML Translate API
+    1. ML Vision API
+    1. ML Video API
 1. Data Labeling [**new**]
-1. AI Platform
-1. Auto ML Natural Language [**new**]
-1. Auto ML Tables [**new**]
-1. Auto ML Translation [**new**]
-1. Auto ML Vision [**new**]
-1. Auto ML Video Intelligence [**new**]
-1. ML Natural Language API
-1. ML Translate API
-1. ML Vision API
-1. ML Video API
 
 #### Storage Products
 1. SQL
@@ -44,17 +53,18 @@ Steps for preparation
 1. PubSub
 
 #### New Products
-1. Composer [**new**]
-1. Fusion [**new**]
+1. Composer [**new**] **IMP**
+1. Fusion [**new**] **IMP**
 1. Data Catalogue [**new**]
 
-### Good to know products
+### NICE TO HAVE products
 1. Scheduler
 1. Tasks
-1. IoT Core
-1. IAM
 1. Kubernetes & KubFlow
 1. Cloud Functions
+1. Cloud Run
+1. IoT Core **NOT SO MUCH IMP**
+1. IAM **NOT SO MUCH IMP**
 
 ## Suggestions for Certification Preparation Study
 1. Go through slides of Data Engineering course found in Qwiklabs and Labs at least once. Check coursera videos too if needed
