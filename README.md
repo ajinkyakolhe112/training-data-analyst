@@ -3,9 +3,7 @@
     - www.tiny.cc/gcp-ajinkya
 2. **LABS**. Qwiklabs LINK
     - https://googlecloud.qwiklabs.com
-    - Exact URL- https://googlecloud.qwiklabs.com/classrooms/4706/labs/36518 
     - **Slides of Lectures will be present in googlecloud.qwiklabs.com**
-    - If you don't see the training classroom, enter your email id at https://forms.gle/nwGkyr79SiZnMi587
 3. **Github clone command**
     - Execute following command for official code repo
     - `git clone https://github.com/GoogleCloudPlatform/training-data-analyst`
